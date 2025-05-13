@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <title> Triatlon Carabobo </title>
+    <link rel="stylesheet" href="estilos/Styles.css">
+    <script src="./scrip.js"></script>
+</head>
+<body>
+    <h1>Triatlon Carabobo</h1>
+    <div class="container">
+        <img src="imagenes/campo-carabobo.jpg" id="img1" class="Imagen-container">
+        <img src="imagenes/edificio.webp" id="img3" class="Imagen-container">
+        <img src="imagenes/estadio.jpg" id="img4" class="Imagen-container">
+        <img src="imagenes/fuerte.jpg" id="img5" class="Imagen-container">
+    </div>
+    <div class="cajaMedio">
+        <ul>
+            <div class="seleccion">
+                <li><a onclick="window.location.href='#1'">Registrar competidor</a></li>
+            </div>
+            <div class="seleccion">
+                <li><a onclick="window.location.href='#2'">Competidores Registrados</a></li>
+            </div>
+            <div class="seleccion">
+                <li><a onclick="window.location.href='#3'">Resultados Competicion</a></li>
+            </div>
+        </ul>
+    </div>
+    <section> 
+        <img src="imagenes/caminata.jpg" id="sec1">
+        <img src="imagenes/cilismo.jpg" id="sec2">
+        <img src="imagenes/natacion.jpg"sec3">
+    </section>
+    <p>"En Carabobo, creemos en el poder transformador del deporte. Este triatlón no solo desafiará los límites físicos de nuestros atletas, sino que también fortalecerá el orgullo de ser carabobeños. ¡Los esperamos a todos para hacer historia!"
+
+        <br>#TriatlónCarabobo2024 #CaraboboSeMueve #GobernaciónDeCarabobo #LaCava
+        <br>
+        <br>¡Carabobo se Mueve!
+        <br>
+        Gobernación de Carabobo y La Cava Presentan: "Triatlón por un Estado Saludable"
+        <br>
+        
+        El Gobierno de Carabobo, liderado por el Gobernador Rafael la Cava, se enorgullece en anunciar el gran evento deportivo del año:
+        <br>
+        
+        "Triatlón Carabobo 2025: Fuerza, Resistencia y Espíritu"
+        <br>
+         Natación |  Ciclismo | Carrera
+         <br>
+        
+        Fecha: [3/04/2025]
+        <br>
+        Lugar: Parque Carabobo
+        <br>
+    
+        
+        Objetivo del Evento:
+        <br>
+        Promover el deporte, la salud y la unión familiar en nuestro estado, mientras mostramos al mundo los paisajes naturales y la infraestructura deportiva de Carabobo.
+        
+        
+    </p>
+    <div class="cajaFinal">
+        <h2>Gobernacion de Carabobo</h2>
+    </div>
+    <!-- mi parte -->
+
+     <div class="input-container">
+        <h1 id="1">Registrar</h1>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="number" id="cedula" placeholder="cedula">
+        <input list="opciones" name="miCombo" id="miCombo" placeholder="Zona">
+        <datalist id="opciones">
+            <option value="Bejuma">
+            <option value="Carlos Arvelo">
+            <option value="Diego Ibarra">
+            <option value="Guacara">
+            <option value="Juan José Mora">
+            <option value="Libertador ">
+            <option value="Los Guayos">
+            <option value="Miranda(Palo Negro)">
+            <option value="Montalbán ">
+            <option value="Puerto Cabello">
+            <option value="San Diego ">
+            <option value="San Joaquín">
+            <option value="Valencia  ">
+        </datalist>
+        <input type="number" id="edad" max="70" min="18" placeholder="Edad">
+        <button id="cargar">cargar</button>
+    </div>
+    <h1 id="2">Registrados</h1>
+    <table border="1" id="table">
+        <tr>
+            <th>nombre</th>
+            <th>cedula</th>
+            <th>municipio</th>
+            <th>edad</th>
+            <th>asistencia</th>
+          </tr>
+    </table>
+
+    <form>
+        <label>Hora militar (HH:MM:SS):</label>
+        <div class="hora-militar">
+            <input type="number" id="hh" min="0" max="23" placeholder="HH" required>
+            <span class="separador">:</span>
+            <input type="number" id="mm" min="0" max="59" placeholder="MM" required>
+            <span class="separador">:</span>
+            <input type="number" id="ss" min="0" max="59" placeholder="SS" required>
+        </div>
+    </form>
+    <button id="confirmar">confirmar</button>
+    <h1 id="3">competencia</h1>
+    <table border="1" id="tableC">
+        <tr>
+            <th>nombre</th>
+            <th>cedula</th>
+            <th>municipio</th>
+            <th>edad</th>
+            <th>Tiempo de inicio</th>
+            <th>Caminata</th>
+            <th>Tiempo de finalizacion</th>
+            <th>Tiempo de inicio</th>
+            <th>Natacion</th>
+            <th>Tiempo de finalizacion</th>
+            <th>Tiempo de inicio</th>
+            <th>Ciclismo</th>
+            <th>Tiempo de finalizacion</th>
+            <th>Desplazamiento</th>
+          </tr>
+          <tbody id="cuerpo1">
+
+          </tbody>
+    </table>
+
+    <a href="index1.html"><button id="confirmar"  >Reiniciar</button></a>
+    <h1>Podio</h1>
+    <table border="1" id="tableC">
+        <tr>
+            <th>nombre</th>
+            <th>cedula</th>
+            <th>municipio</th>
+            <th>duracion</th>
+          </tr>
+          <tbody id="cuerpo3">
+
+          </tbody>
+    </table>
+    </html>
+    <script>
+       let i =0
+        document.getElementById("cargar").addEventListener("click",function (){
+        nombre = document.getElementById("nombre").value
+        cedula=document.getElementById("cedula").value
+        municipio = document.getElementById("miCombo").value
+        edad = document.getElementById("edad").value
+        if (participantes.length>0){
+            for (let index = 0; index < participantes.length; index++) {
+                console.log(participantes[index].cedula==cedula)
+                if (participantes[index].cedula==cedula){
+                    alert("La cedula ya fue registrada")
+                    return;
+                }
+                
+            }
+        }
+        if(nombre==""||cedula==""||municipio==""||edad==""){
+            alert("Debe llenar todos los campos")
+                return;
+        }
+        agregar(nombre,cedula,municipio,edad)
+        const tr = document.createElement("tr")
+        const td_nombre = document.createElement("td")
+        td_nombre.textContent=nombre
+        const td_cedula = document.createElement("td")
+        td_cedula.textContent=cedula
+        const td_municipio = document.createElement("td")
+        td_municipio.textContent=municipio
+        const td_edad = document.createElement("td")
+        td_edad.textContent=edad
+        const asistencia = document.createElement("input");
+        asistencia.type="checkbox"
+        asistencia.id=i+""
+        const td_checkbox = document.createElement("td")
+
+        asistencia.addEventListener("change", function(){
+        let estados=""
+        console.log(parseInt(asistencia.id))
+        if(asistencia.checked){
+            participantes[parseInt(asistencia.id)].estado="ASISTE"
+        }
+        else{
+            participantes[parseInt(asistencia.id)].estado="NOASISTE"
+        }
+        })
+
+        i= i + 1
+        td_checkbox.append(asistencia)
+        tr.append(td_nombre,td_cedula,td_municipio,td_edad,td_checkbox)
+        document.getElementById("table").appendChild(tr)
+        document.getElementById("nombre").value = "";
+        document.getElementById("cedula").value = "";
+        document.getElementById("miCombo").value = "";
+        document.getElementById("edad").value = "";
+        })
+        // cofirmar
+        document.getElementById("confirmar").addEventListener("click",carrera)
+        function carrera(){
+            let hora = validarHora()
+            document.getElementById("cuerpo1").innerHTML=""
+            for(let i =0 ;i<participantes.length;i++){
+                console.log(participantes[i].estado==="ASISTE")
+                if(participantes[i].estado==="ASISTE"){
+
+                    const tr = document.createElement("tr")
+                    const td_nombre = document.createElement("td")
+                    td_nombre.textContent=participantes[i].nombre
+                    const td_cedula = document.createElement("td")
+                    td_cedula.textContent=participantes[i].cedula
+                    const td_municipio = document.createElement("td")
+                    td_municipio.textContent=participantes[i].municipio
+                    const td_edad = document.createElement("td")
+                    td_edad.textContent=participantes[i].edad
+
+                    const relog1 = document.createElement("td")
+                    relog1.textContent=hora
+                    relog1.id=1+""+participantes[i].cedula
+                    const caminata = document.createElement("td")
+                    caminata.textContent="00"
+                    caminata.id="C"+participantes[i].cedula
+                    const relog2 = document.createElement("td")
+                    relog2.textContent="00:00:00"
+                    relog2.id=2+""+participantes[i].cedula
+
+                    const relog3 = document.createElement("td")
+                    relog3.textContent="00:00:00"
+                    relog3.id=3+""+participantes[i].cedula
+                    const natacion = document.createElement("td")
+                    natacion.textContent="00"
+                    natacion.id="N"+participantes[i].cedula
+                    const relog4 = document.createElement("td")
+                    relog4.textContent="00:00:00"
+                    relog4.id=4+""+participantes[i].cedula
+
+                    const relog5 = document.createElement("td")
+                    relog5.textContent="00:00:00"
+                    relog5.id=5+""+participantes[i].cedula
+                    const ciclismo = document.createElement("td")
+                    ciclismo.textContent="00"
+                    ciclismo.id="Ci"+participantes[i].cedula
+                    const relog6 = document.createElement("td")
+                    relog6.textContent="00:00:00"
+                    relog6.id=6+""+participantes[i].cedula
+                    const r = document.createElement("td")
+                    r.textContent="00"
+                    r.id="r"+participantes[i].cedula
+                    tr.append(td_nombre,td_cedula,td_municipio,td_edad,relog1,caminata,relog2,relog3,natacion,relog4,relog5,ciclismo,relog6,r)
+                    document.getElementById("cuerpo1").appendChild(tr)
+                    relog(relog2.id,relog3.id,relog4.id,relog5.id,relog6.id,caminata.id,natacion.id,ciclismo.id,relog1.textContent,r.id,i)
+                }
+            }
+        }
+        document.getElementById("rapido").addEventListener("click",function(){
+    velociad_global=1
+})
+document.getElementById("normal").addEventListener("click",function(){
+    velociad_global=1000
+})
+
+    </script>
+</body>
